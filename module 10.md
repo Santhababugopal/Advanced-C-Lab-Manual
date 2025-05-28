@@ -1,4 +1,5 @@
 EXP NO:16 C PROGRAM TO SEARCH A GIVEN ELEMENT IN THE GIVEN LINKED LIST.
+
 Aim:
 To write a C program to search a given element in the given linked list.
 
@@ -10,11 +11,37 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+struct Node{ 
+    char data;  
+    struct Node *next; 
+}*head; 
+void search(char data) 
+{ 
+  struct Node *ptr=head; 
+  char temp=data; 
+  int count=1; 
+  int flag=0; 
+  while(ptr!=NULL) 
+  { 
+      if(ptr->data==temp) 
+      { 
+          printf("item %c found at location %d",ptr->data,count); 
+          flag=1; 
+      } 
+      count++; 
+      ptr=ptr->next; 
+} 
+if(flag==0) 
+{ 
+} 
+} 
+printf("Item not found");
 
+```
 Output:
 
-//paste your output here
+![image](https://github.com/user-attachments/assets/d9e3d085-be19-4b66-ab72-d280c954a90d)
 
 
 
@@ -24,6 +51,7 @@ Thus, the program to search a given element in the given linked list is verified
 
  
 EXP NO:17  PROGRAM TO INSERT A NODE IN A LINKED LIST.
+
 Aim:
 To write a C program to insert a node in a linked list.
 Algorithm:
@@ -34,11 +62,40 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+struct Node{ 
+    char data;  
+    struct Node *next; 
+}*head; 
+void insert(char data) 
+{ 
+    struct Node *n=malloc(sizeof(struct Node *)); 
+    if(n==NULL) 
+    { 
+        printf("Memory allocation failed!\n"); 
+    } 
+    n->data=data; 
+    n->next=NULL; 
+    if(head == NULL) 
+    { 
+        head=n; 
+    } 
+    else 
+    { 
+        struct Node *temp=head; 
+        while(temp->next!=NULL) 
+        { 
+            temp=temp->next; 
+        } 
+        temp->next=n; 
+} 
+}
+```
 
 Output:
 
-//paste your output here
+![image](https://github.com/user-attachments/assets/5801db75-415d-408e-bb32-87ab4973e87a)
+
 
  
 Result:
@@ -58,11 +115,28 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+struct Node 
+{ 
+struct Node *prev; 
+struct Node *next; 
+int data; 
+}*head; 
+void display() 
+{ 
+} 
+struct Node *ptr=head; 
+while(ptr!=NULL) 
+{ 
+}    
+printf("%d ",ptr->data); 
+ptr=ptr->next;
+```
 
 Output:
 
-//paste your output here
+![image](https://github.com/user-attachments/assets/d3565678-7d43-420b-9451-2ff2b6c200b6)
+
 
 
 Result:
@@ -83,11 +157,45 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+struct Node 
+{ 
+    struct Node *prev; 
+    struct Node *next; 
+    float data; 
+}*head; 
+ 
+void insert(float data) 
+{ 
+    struct Node*n=malloc(sizeof(struct Node)); 
+    if(n==head) 
+    { 
+        printf("Memory allocation failed!\n"); 
+    } 
+    n->data=data; 
+    n->next=NULL; 
+    n->prev=NULL; 
+    if(head==NULL) 
+    { 
+        head=n; 
+    } 
+    else 
+    { 
+        struct Node *temp=head; 
+        while(temp->next!=NULL) 
+        { 
+            temp=temp->next; 
+        } 
+        temp->next=n; 
+        n->prev=NULL; 
+    } 
+} 
+
+```
 
 Output:
 
-//paste your output here
+![image](https://github.com/user-attachments/assets/f29adc7d-5088-4291-83f0-38972a3dc1f5)
 
 
 Result:
@@ -125,11 +233,36 @@ o	If the element is not found in any node, print a message indicating the elemen
 
 Program:
 
-//type your code here
+```
+struct Node 
+{ 
+struct Node *prev; 
+struct Node *next; 
+char data; 
+}*head; 
+void delete() 
+{ 
+if(head ==NULL) 
+{ 
+} 
+printf("UNDERFLOW\n"); 
+    else 
+    { 
+        struct Node *ptr=head; 
+        head=head->next; 
+        free(ptr); 
+        ptr=NULL; 
+        printf("Node deleted\n"); 
+    } 
+     
+}
+
+```
 
 Output:
 
-//paste your output here
+
+![image](https://github.com/user-attachments/assets/aa3056a7-ee45-415e-ac11-62cb4de86d48)
 
 
 
